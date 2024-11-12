@@ -74,24 +74,24 @@ function JobPostingForm() {
 
         <button
           type="submit"
-          className="w-full p-3 rounded hover:bg-gray-200 transition transform hover:scale-105"
+          className="w-full p-3 bg-blue-500 text-white rounded hover:bg-blue-600 transition transform hover:scale-105"
         >
           Post Job
         </button>
       </form>
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center">
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
           <div className="bg-white p-6 rounded-xl shadow-2xl transform transition-all hover:scale-105">
             <h3 className="text-2xl font-bold mb-4 animate-slide-in">
               Job Posted!
             </h3>
-            <p className="mb-4">
-              The job has been successfully posted. Applicants will be able to
-              view and apply soon.
+            <p className="mb-4 text-green-600 font-semibold">
+              🎉 The job has been successfully posted. Applicants will be able
+              to view and apply soon.
             </p>
             <button
               onClick={() => setShowModal(false)}
-              className="w-full p-3 rounded hover:bg-gray-200 transition transform hover:scale-105"
+              className="w-full p-3 bg-red-500 text-white rounded hover:bg-red-600 transition transform hover:scale-105"
             >
               Close
             </button>

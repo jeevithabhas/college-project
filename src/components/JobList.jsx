@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getJobs } from "../services/api";
-import { FaBriefcase, FaBuilding, FaListAlt } from "react-icons/fa";
+import { FaBriefcase, FaBuilding } from "react-icons/fa";
 
 function JobList() {
   const [jobs, setJobs] = useState([]);
@@ -14,20 +14,20 @@ function JobList() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-lg shadow-xl max-w-4xl mx-auto mt-10 transform transition-all duration-500 hover:scale-105">
-      <h2 className="text-3xl font-bold text-center text-blue-700 mb-8 animate-fade-in">
+    <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 sm:p-8 rounded-lg shadow-xl max-w-2xl mx-auto mt-10 transform transition-all duration-500 hover:scale-105">
+      <h2 className="text-2xl sm:text-3xl font-bold text-center text-blue-700 mb-4 sm:mb-8 animate-fade-in">
         Job Postings
       </h2>
-      <ul className="space-y-6">
+      <ul className="space-y-4 sm:space-y-6">
         {jobs.map((job) => (
           <li
             key={job._id}
-            className="flex flex-col p-6 border-l-4 rounded-lg shadow-sm bg-white hover:shadow-lg transition-transform transform hover:scale-105"
+            className="flex flex-col p-4 sm:p-6 border-l-4 border-blue-500 rounded-lg shadow-sm bg-white hover:shadow-lg transition-transform transform hover:scale-105"
           >
             {/* Job Header: Company and Title */}
             <div className="flex items-center mb-4">
               <FaBuilding className="text-indigo-500 mr-3" size={20} />
-              <h3 className="font-semibold text-xl text-gray-700">
+              <h3 className="font-semibold text-lg sm:text-xl text-gray-700">
                 {job.name}
               </h3>
               <div className="ml-auto bg-indigo-200 text-indigo-600 py-1 px-3 rounded-full text-sm">
