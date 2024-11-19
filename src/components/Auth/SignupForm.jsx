@@ -18,11 +18,11 @@ function SignupForm() {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState(""); // 'error' or 'success'
-  const [loading, setLoading] = useState(false); // State to manage loading spinner
-  const [emailValid, setEmailValid] = useState(true); // State to track email validity
-  const [passwordValid, setPasswordValid] = useState(true); // State to track password validity
-  const navigate = useNavigate(); // Use useNavigate hook for redirection
+  const [messageType, setMessageType] = useState(""); 
+  const [loading, setLoading] = useState(false); 
+  const [emailValid, setEmailValid] = useState(true); 
+  const [passwordValid, setPasswordValid] = useState(true); 
+  const navigate = useNavigate(); 
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -44,9 +44,9 @@ function SignupForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loading spinner
+    setLoading(true); 
     try {
-      console.log("Sending signup data:", formData); // Add logging
+      console.log("Sending signup data:", formData); 
       await axios.post(
         "https://college-backend-i6yo.onrender.com/api/auth/signup",
         formData
@@ -55,7 +55,7 @@ function SignupForm() {
       setMessage("Signup successful! Redirecting to login...");
       setTimeout(() => {
         navigate("/login"); // Navigate to login after successful signup
-      }, 2000); // 2-second delay before redirection
+      }, 2000); 
     } catch (error) {
       console.error("Signup error:", error); // Log error details
       setMessageType("error");
@@ -65,7 +65,7 @@ function SignupForm() {
         setMessage("Signup failed. Please try again.");
       }
     } finally {
-      setLoading(false); // Hide loading spinner
+      setLoading(false); 
     }
   };
 

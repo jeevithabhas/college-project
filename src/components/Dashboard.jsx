@@ -6,7 +6,7 @@ import {
   getPlacementDrives,
 } from "../services/api";
 import { Bar, Pie } from "react-chartjs-2";
-import "chart.js/auto"; // Important for Chart.js v3+
+import "chart.js/auto";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faClipboardList,

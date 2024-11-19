@@ -8,7 +8,6 @@ import {
   FaSpinner,
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { Tooltip } from "react-tooltip";
 
 function LoginForm() {
   const [formData, setFormData] = useState({
@@ -17,11 +16,11 @@ function LoginForm() {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState(""); // 'error' or 'success'
-  const [loading, setLoading] = useState(false); // State to manage loading spinner
-  const [emailValid, setEmailValid] = useState(true); // State to track email validity
-  const [passwordValid, setPasswordValid] = useState(true); // State to track password validity
-  const navigate = useNavigate(); // Use useNavigate hook for redirection
+  const [messageType, setMessageType] = useState("");
+  const [loading, setLoading] = useState(false); 
+  const [emailValid, setEmailValid] = useState(true); 
+  const [passwordValid, setPasswordValid] = useState(true); 
+  const navigate = useNavigate(); 
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -55,7 +54,7 @@ function LoginForm() {
       setMessage("Login successful! Redirecting...");
       setTimeout(() => {
         navigate("/dashboard"); // Redirect to dashboard after login
-      }, 2000); // 2-second delay before redirection
+      }, 2000); 
     } catch (error) {
       console.error("Login error:", error); // Log error details
       setMessageType("error");
@@ -69,7 +68,7 @@ function LoginForm() {
         setMessage("Login failed. Please try again.");
       }
     } finally {
-      setLoading(false); // Hide loading spinner
+      setLoading(false); 
     }
   };
 

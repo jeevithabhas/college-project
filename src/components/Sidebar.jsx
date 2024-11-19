@@ -11,7 +11,7 @@ import {
   FaList,
   FaWpforms,
   FaTimes,
-  FaTachometerAlt, // Add dashboard icon
+  FaTachometerAlt, 
 } from "react-icons/fa";
 
 function Sidebar({ isOpen, toggleSidebar }) {
