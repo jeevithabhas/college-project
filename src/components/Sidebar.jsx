@@ -11,6 +11,7 @@ import {
   FaList,
   FaWpforms,
   FaTimes,
+  FaTachometerAlt, // Add dashboard icon
 } from "react-icons/fa";
 
 function Sidebar({ isOpen, toggleSidebar }) {
@@ -39,6 +40,13 @@ function Sidebar({ isOpen, toggleSidebar }) {
         className="text-white flex items-center space-x-3 px-4 py-3 hover:bg-gray-700 rounded transition duration-150 transform hover:scale-105"
       >
         <FaHome className="inline mr-2 animate-bounce" /> <span>Home</span>
+      </Link>
+      <Link
+        to="/dashboard"
+        className="text-white flex items-center space-x-3 px-4 py-3 hover:bg-gray-700 rounded transition duration-150 transform hover:scale-105"
+      >
+        <FaTachometerAlt className="inline mr-2 animate-pulse" />{" "}
+        <span>Dashboard</span>
       </Link>
       <div>
         <div

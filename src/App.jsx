@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Home from "./pages/Home";
+import SignupForm from "./components/Auth/SignupForm";
+import LoginForm from "./components/Auth/LoginForm";
 import ApplicationList from "./components/ApplicationList";
 import InterviewList from "./components/InterviewList";
 import JobList from "./components/JobList";
@@ -11,6 +13,8 @@ import StudentApplicationForm from "./components/StudentApplicationForm";
 import InterviewScheduleForm from "./components/InterviewScheduleForm";
 import JobPostingForm from "./components/JobPostingForm";
 import PlacementDriveForm from "./components/PlacementDriveForm";
+import PrivateRoute from "./components/PrivateRoute";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -27,22 +31,40 @@ function App() {
         <div className="flex-1 p-4">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/applications" element={<ApplicationList />} />
-            <Route path="/interviews" element={<InterviewList />} />
-            <Route path="/jobs" element={<JobList />} />
-            <Route path="/placement-drives" element={<PlacementDriveList />} />
+            <Route path="/signup" element={<SignupForm />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route
+              path="/dashboard"
+              element={<PrivateRoute element={Dashboard} />}
+            />
+            <Route
+              path="/applications"
+              element={<PrivateRoute element={ApplicationList} />}
+            />
+            <Route
+              path="/interviews"
+              element={<PrivateRoute element={InterviewList} />}
+            />
+            <Route path="/jobs" element={<PrivateRoute element={JobList} />} />
+            <Route
+              path="/placement-drives"
+              element={<PrivateRoute element={PlacementDriveList} />}
+            />
             <Route
               path="/student-application-form"
-              element={<StudentApplicationForm />}
+              element={<PrivateRoute element={StudentApplicationForm} />}
             />
             <Route
               path="/interview-schedule-form"
-              element={<InterviewScheduleForm />}
+              element={<PrivateRoute element={InterviewScheduleForm} />}
             />
-            <Route path="/job-posting-form" element={<JobPostingForm />} />
+            <Route
+              path="/job-posting-form"
+              element={<PrivateRoute element={JobPostingForm} />}
+            />
             <Route
               path="/placement-drive-form"
-              element={<PlacementDriveForm />}
+              element={<PrivateRoute element={PlacementDriveForm} />}
             />
           </Routes>
         </div>
